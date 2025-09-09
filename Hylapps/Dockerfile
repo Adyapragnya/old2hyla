@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Install 'serve' globally to serve the React app
-RUN npm install -g serve
+RUN npm install -g serve@14.2.4
 
 # Expose port 3000 for the app to be accessed
 EXPOSE 3000
