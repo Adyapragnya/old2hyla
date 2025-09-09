@@ -1,0 +1,223 @@
+.multi-select-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 10; /* default z-index */
+}
+
+.multi-select-container.open {
+  z-index: 100; /* elevate the active one */
+}
+
+
+.multi-select-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  user-select: none;
+}
+
+.multi-select-control {
+  position: relative;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: white;
+  min-height: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 4px 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.multi-select-control:hover {
+  border-color: #93c5fd;
+  background-color: #f9fafb;
+}
+
+
+
+
+.multi-select-control:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+  outline: none;
+}
+
+.multi-select-container {
+  position: relative; /* add this */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  z-index: 10000; /* add if needed */
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 100%;
+}
+
+.selected-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e5e7eb;  /* light gray background */
+  color: #374151;  
+  border-radius: 9999px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+ box-shadow: 0 1px 3px rgba(55, 65, 81, 0.2);
+}
+
+.selected-tag span {
+  display: inline-block;
+  max-width: 110px; /* slightly wider */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+.selected-tag button {
+  flex-shrink: 0 !important;
+  margin-left: 4px !important;
+  font-size: 12px !important;
+  padding: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  line-height: 1 !important;
+  background: none !important;
+  border: none !important;
+   color: #6b7280 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+}
+
+
+.selected-tag button:hover {
+  color: #ffffff;
+  background-color: rgba(255 255 255 / 0.15);
+}
+
+
+
+
+
+.more-tag {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+
+.options-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  border: 1.5px solid #2563eb;
+  border-radius: 8px;
+  background: white;
+  z-index: 10000; /* Corrected from 100_000 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-4px);
+  animation: dropdownFadeIn 0.2s ease forwards;
+}
+
+.options-list {
+
+  z-index: 9999;
+}
+
+.option-item {
+  padding: 0.45rem 0.75rem; /* Reduced padding */
+  cursor: pointer;
+  font-size: 0.9rem; /* Smaller font */
+  color: #374151;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.option-item:hover,
+.option-item:focus {
+  background-color: #f3f4f6; /* light neutral hover */
+  color: #111827;
+}
+
+.option-item.selected {
+  background-color: #e5e7eb; /* subtle selection */
+  color: #1f2937;
+  font-weight: 600;
+}
+
+
+.options-list {
+  opacity: 0;
+  transform: translateY(-4px);
+  animation: dropdownFadeIn 0.2s ease forwards;
+}
+
+@keyframes dropdownFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-search {
+  padding: 0.4rem 0.65rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dropdown-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  font-size: 0.8rem;
+}
+
+.dropdown-actions button {
+  background: none;
+  border: none;
+  color: #2563eb;
+  background-color: #eff3ff;
+
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 0.15rem 0.4rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dropdown-actions button:hover {
+  background-color: #e0e7ff;
+  text-decoration: none;
+}
